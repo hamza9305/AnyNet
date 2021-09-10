@@ -31,14 +31,6 @@ It has been accepted by International Conference on Robotics and Automation (ICR
 Many real-world applications of stereo depth es- timation in robotics require the generation of disparity maps in real time on low power devices. Depth estimation should be accurate, e.g. for mapping the environment, and real-time, e.g. for obstacle avoidance. Current state-of-the-art algorithms can either generate accurate but slow, or fast but high-error mappings, and typically have far too many parameters for low-power/memory devices. Motivated by this shortcoming we propose a novel approach for disparity prediction in the anytime setting. In contrast to prior work, our end-to-end learned approach can trade off computation and accuracy at inference time. The depth estimation is performed in stages, during which the model can be queried at any time to output its current best estimate. In the first stage it processes a scaled down version of the input images to obtain an initial low resolution sketch of the disparity map. This sketch is then successively refined with higher resolution details until a full resolution, high quality disparity map emerges. Here, we leverage the fact that disparity refinements can be performed extremely fast as the residual error is bounded by only a few pixels. Our final model can process 1242×375 resolution images within a range of 10-35 FPS on an NVIDIA Jetson TX2 module with only marginal increases in error – using two orders of magnitude fewer parameters than the most competitive baseline.
 
 
-## Original Dataset
-
-<p align="center">
-  <img src="Resources/Distorted_Left.png" img align="left" width="200" height="200" alt= "Distorted"> 
-  <img src="Resources/Distorted_Right.png" width="200" height="200"  >
-  <img src="Resources/Distorted_Disparity.png" img align="right" width="200" height="200">
-</p>
-
 ## Results
 
 #### Disparity Maps
